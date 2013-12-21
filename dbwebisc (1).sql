@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 21, 2013 at 10:33 AM
+-- Generation Time: Dec 21, 2013 at 11:34 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `tintuc` (
   `tintuc_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tintuc_title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(11) NOT NULL,
   `tintuc_content` text COLLATE utf8_unicode_ci,
   `tintuc_postdate` date DEFAULT NULL,
@@ -37,7 +38,14 @@ CREATE TABLE IF NOT EXISTS `tintuc` (
   PRIMARY KEY (`tintuc_id`),
   KEY `tintuc_cataloge_id` (`tintuc_cataloge_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `tintuc`
+--
+
+INSERT INTO `tintuc` (`tintuc_id`, `tintuc_title`, `user_id`, `tintuc_content`, `tintuc_postdate`, `tintuc_keyword`, `tintuc_status`, `tintuc_cataloge_id`) VALUES
+(1, 'Nhà Hảo Tâm Sài Gòn Nguyễn Trung Việt', 1, 'Không Có Nội Dung', '2013-12-21', 'Hảo Tâm', 'Đã Ủng Hộ', 2);
 
 -- --------------------------------------------------------
 
@@ -50,7 +58,15 @@ CREATE TABLE IF NOT EXISTS `tintuc_cataloge` (
   `tintuc_cataloge_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`tintuc_cataloge_id`),
   UNIQUE KEY `tintuc_cataloge_name_UNIQUE` (`tintuc_cataloge_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tintuc_cataloge`
+--
+
+INSERT INTO `tintuc_cataloge` (`tintuc_cataloge_id`, `tintuc_cataloge_name`) VALUES
+(2, 'Do admin post'),
+(1, 'Do người dùng post');
 
 -- --------------------------------------------------------
 

@@ -31,6 +31,7 @@
 		<link href="css/style.css" type="text/css" rel="stylesheet" media="print,screen" />
 		<link href="css/bootstrap-theme.css" type="text/css" rel="stylesheet" />
 		<link href="css/docs.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="js/wysibb/theme/default/wbbtheme.css" />
 
 		<!-- Javascript -->
 		<script src="js/jquery.min.js" type="text/javascript"></script>
@@ -39,6 +40,7 @@
 		<script src="js/jquery.qtip.js" type="text/javascript"></script>
 		<script src="js/jquery.validate.min.js" type="text/javascript"></script>
 		<script src="js/messages_vi.js" type="text/javascript"></script>
+		<script src="js/wysibb/jquery.wysibb.js" type="text/javascript"></script>
 		<script>
 			$(document).ready(function() {
 				$("#management").validate({
@@ -49,7 +51,7 @@
 						},
 					}
 				});
-
+				$("#editor").wysibb();
 			});
 		</script>
 		<?php
@@ -153,6 +155,10 @@
 					else if($_GET['changePage']=='6')
 					{
 					require 'addEditDelete/addOneUserLevel.php';
+					}
+					else if($_GET['changePage']=='7')
+					{
+					require 'addEditDelete/addOneNews.php';
 					}
 					}
 					else {
