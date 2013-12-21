@@ -1,0 +1,15 @@
+
+#wowslider-container1{
+	height: 100%;
+}
+
+#wowslider-container1 .ws-title{
+	bottom:5%;
+	left: 0;
+}
+
+#wowslider-container1 .ws-title span{
+	font-weight: bold;
+	color: #419641;
+	font-size: 18px;
+}

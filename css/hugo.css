@@ -1,0 +1,81 @@
+/*
+ * HuGo Framework
+ */
+
+/*
+ * Form
+ */
+.form-textbox{
+	width: 100%;
+	height: 34px;
+	padding: 6px 6px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555555;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	--border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.form-textbox:focus{
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 1px rgba(102, 175, 233, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 1px rgba(102, 175, 233, 0.6);
+}
+
+.liveSearch{
+	position: relative;
+	max-width: 430px;
+	min-width: 250px;
+}
+
+.liveSearch > .form-liveSearch .form-group{
+	margin-bottom: 0;
+}
+
+.liveSearch > .form-liveSearch input[type="search"]{
+	width: 70%;
+}
+
+.liveSearch > .form-liveSearch button{
+	width: 27%;
+	margin-left: 3px;
+}
+
+.result-liveSearch{
+	display: none;
+	width: 70%;
+	border: 1px solid #CCC;
+	padding: 5px;
+}
+
+.result-liveSearch-heading{
+	text-align: center;
+	background-color: #CCCCCC;
+	font-weight: bold;
+	border-radius: 3px;
+}
+
+.result-liveSearch-list > li{
+	padding: 3px;
+}
+
+.result-liveSearch-list > li:hover{
+	background-color: #CCCCCC;
+}
+
+.result-liveSearch-img{
+	width: 64px;
+	height: 64px;
+	background-color: #C4E3F3;
+}
+
+.btn{
+	border-radius: 0;
+}

@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "dbwebphim";
+$dbname = "dbwebisc";
 
 $my_connect = mysql_connect($host, $username, $password);
 // Check connection
