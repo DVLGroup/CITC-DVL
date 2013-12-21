@@ -8,7 +8,7 @@
 					<div>
 					<h1 class="text-center text-danger">Thêm Dữ Liệu Tin Tức</h1>
 					<div class="well">
-						<form method="POST" action="addEditDelete/addUser.php" class="form-horizontal" id="management" enctype="multipart/form-data">
+						<form method="POST" action="addEditDelete/addNews.php" class="form-horizontal" id="management" enctype="multipart/form-data">
 							
 							<div class="form-group">
 								<label class="control-label col-md-2">Tiêu Đề</label>
@@ -40,7 +40,7 @@
 							<div class="form-group">
 								<label class="control-label col-md-2">Nội Dung</label>
 								<div class="col-md-8">
-									<textarea id="editor"></textarea>
+									<textarea id="editor" name="noiDung"></textarea>
 								</div>
 								<div class="col-md-offset-2"></div>
 
@@ -56,9 +56,9 @@
 							<div class="form-group">
 								<label class="control-label col-md-2">Trạng Thái</label>
 								<div class="col-md-8">
-									<select class="form-control">
-										<option value="1">Đã Ủng Hộ</option>
-										<option value="0">Chưa Ủng Hộ</option>
+									<select class="form-control" name="trangThai">
+										<option value="Đã Ủng Hộ">Đã Ủng Hộ</option>
+										<option value="Chưa Ủng Hộ">Chưa Ủng Hộ</option>
 									</select>
 								</div>
 								<div class="col-md-offset-2"></div>
@@ -82,18 +82,11 @@
 								<div class="col-md-offset-2"></div>
 
 							</div>
-							<div class="form-group">
-								<label class="control-label col-md-2">Mô Tả</label>
-								<div class="col-md-8">
-									<textarea name="moTa" class="form-control"></textarea>
-								</div>
-								<div class="col-md-offset-2"></div>
-
-							</div>
+							
 							<div class="form-group">
 								<div class="col-md-offset-2 col-md-8">
 									<div class="btn-group">
-										<a href="index-admin.php?changePage=1" class="btn btn-info text-center">Hủy</a>
+										<a href="index-admin.php?changePage=3" class="btn btn-info text-center">Hủy</a>
 									</div>
 									
 									<div class="btn-group">

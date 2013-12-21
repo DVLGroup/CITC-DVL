@@ -1,15 +1,15 @@
 				<?php
-				$query = "SELECT * FROM `tintuc`,tintuc_cataloge WHERE tintuc.`tintuc_cataloge_id` = tintuc_cataloge.`tintuc_cataloge_id` order by tintuc_id asc";
+				$query = "select * from sanpham order by sanpham.sp_id asc";
 				$result = mysql_query($query);
 
-				mysql_close($link);
+				mysql_close($my_connect);
 				?>
-				<h1 class="text-danger">Bảng Dữ Liệu Tin Tức</h1>
+				<h1 class="text-danger">Bảng Dữ Liệu Sản Phẩm</h1>
 				<div class="btn-group">
-					<a href="index-admin.php?changePage=7" class="btn btn-info">Thêm Mới</a>
+					<a href="index-admin.php?changePage=10" class="btn btn-info">Thêm Mới</a>
 				</div>
 				<div class="btn-group">
-					<a href="index-admin.php?changePage=3" class="btn btn-default">Làm Tươi Trang</a>
+					<a href="index-admin.php?changePage=8" class="btn btn-default">Làm Tươi Trang</a>
 				</div>
 				<div class="btn-group">
 					<input placeholder="Tìm Kiếm..." type="search" name="search" class="form-control" value="" id="id_search" />
@@ -24,12 +24,12 @@
 							<tr>
 								<th class="lead">STT</th>
 								<th class="lead">ID</th>
-								<th class="lead">Tiêu Đề</th>
-								<th class="lead">Ngày Post</th>
+								<th class="lead">Tên SP</th>
 								<th class="lead">Trạng Thái</th>
-								<th class="lead">Loại Tin</th>
-							
+								<th class="lead">Thời Gian</th>
+								<th class="lead">Giá Gốc</th>
 								<th>&nbsp;</th>
+								
 							</tr>
 						</thead>
 						<tbody>
@@ -43,15 +43,23 @@
 								<td><?php echo($i++); ?></td>
 								<td><?php echo($row['0'])?></td>
 								<td><?php echo($row['1']); ?></td>
-								<td><?php echo($row['4']); ?></td>
-								<td><?php echo($row['6']); ?></td>
-								<td><?php echo($row['9']); ?></td>
-
-
 								<td>
-									<a href="addEditDelete/editOneNews.php?tintucID=<?php echo($row['0']); ?>">Sửa</a> 
-									&nbsp; 
-									<a href="addEditDelete/deleteOneNews.php?tintucID=<?php echo($row['0']); ?>&tintucTitle=<?php echo($row['1']); ?>">Xóa</a>
+									<?php
+									if($row['2']==0)
+								 		echo(" <strong class='text-success'>Đã Xong</strong>"); 
+									else {
+										echo(" <strong class='text-danger'>Đang Đấu Giá</strong>");
+									}
+								 	?>
+								 </td>
+								<td><?php echo($row['3']); ?></td>
+								<td><?php echo($row['4']); ?></td>
+
+							
+								<td>
+									<a target="_blank" href="<?php echo($row['5']);?>">Xem Hình</a>
+									&nbsp;
+									<a href="addEditDelete/deleteOneSP.php?spID=<?php echo($row['0']); ?>&spName=<?php echo($row['1']); ?>">Xóa</a>
 								</td>
 							</tr>
 							<?php

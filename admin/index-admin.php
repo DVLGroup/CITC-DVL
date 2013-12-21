@@ -105,6 +105,12 @@
 						<li <?php echoActiveClassIfRequestMatches("index-admin.php?changePage=4") ?>>
 							<a href="index-admin.php?changePage=4">Thể Loại</a>
 						</li>
+						<li <?php echoActiveClassIfRequestMatches("index-admin.php?changePage=8") ?>>
+							<a href="index-admin.php?changePage=8">Sản Phẩm</a>
+						</li>
+						<li <?php echoActiveClassIfRequestMatches("index-admin.php?changePage=9") ?>>
+							<a href="index-admin.php?changePage=9">Đấu Giá</a>
+						</li>
 
 						<li class="dropdown">
 							<a href="#" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> <?php
@@ -160,6 +166,22 @@
 					{
 					require 'addEditDelete/addOneNews.php';
 					}
+					else if($_GET['changePage']=='8')
+					{
+					require 'include/spForm.php';
+					}
+					else if($_GET['changePage']=='9')
+					{
+					require 'include/dauGiaForm.php';
+					}
+					else if($_GET['changePage']=='10')
+					{
+					require 'addEditDelete/addOneSP.php';
+					}
+					else if($_GET['changePage']=='11')
+					{
+					require 'addEditDelete/addOneSP.php';
+					}
 					}
 					else {
 					?>
@@ -176,7 +198,7 @@
 					&copy; 2012 - <?php echo date('Y');
 					//mysql_close($link);
 					?>
-					by DVL Grp. All rights reserved. Designed (with Bootstrap 3.0) and coded this admin page by one of the member of DVL <strong><a href="#">VIET_NT</a></strong>
+					Bản quyền bởi DVL Grp. thiết kế (với Bootstrap 3.0) và lập trình trang admin này bởi một trong những thành viên của DVL <strong><a href="#">VIET_NT</a></strong>
 				</p>
 
 			</div>

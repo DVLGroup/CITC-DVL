@@ -38,22 +38,20 @@
 	</head>
 	<body>
 		<?php
-
-		require '../Connect.php';
-		$tieuDe = $_POST['tieuDe'];
 		
-		$userID = $_POST['userID'];
-		$noiDung = $_POST['noiDung'];
-		$keyword = $_POST['keyword'];
-		$trangThai = $_POST['trangThai'];
-		$theLoai = $_POST['theLoai'];
+		require '../Connect.php';
+		$spName = $_POST['spName'];
+		
+		$thoiGian = $_POST['thoiGian'];
+		$giaGoc = $_POST['giaGoc'];
+		$avatar = $_POST['avatar'];
 
-		if ($tieuDe != null && $userID != null && $noiDung != null && $keyword != null && $trangThai != null && $theLoai != null) {
-			$sql = "INSERT INTO `tintuc`(`tintuc_title`, `user_id`, `tintuc_content`, `tintuc_postdate`, `tintuc_keyword`, `tintuc_status`, `tintuc_cataloge_id`) 
-			VALUES ('$tieuDe',$userID,'$noiDung',CURRENT_DATE(),'$keyword','$trangThai',$theLoai)";
-			// echo($sql);
+		if ($spName != null ||$thoiGian != null||$giaGoc != null||$avatar != null) {
+			$sql = "INSERT INTO `sanpham`(`sp_name`, `sp_status`, `sp_time`, `sp_price_goc`, `sp_image`)
+			 VALUES ('$spName','Đang Đấu Giá','$thoiGian','$giaGoc','$avatar')";
+			echo($sql);
 			if (mysql_query($sql)) {
-				
+				// header('"Location: http://theos.in/"localhost/phptest/admin/index-admin.php?changePage=1');
 		?>
 		<div class="container">
 			<form method="GET" class="form-horizontal" action="../index-admin.php">
@@ -67,7 +65,7 @@
 							</div>
 						</div>
 						<div class="col-md-2 col-md-offset-5">
-							<input type="hidden" name="changePage" value="3" />
+							<input type="hidden" name="changePage" value="8" />
 							<button class="btn btn-info btn-block" type="submit" >
 								Trở Về
 							</button>
@@ -94,7 +92,7 @@
 							</div>
 						</div>
 						<div class="col-md-2 col-md-offset-5">
-							<input type="hidden" name="changePage" value="3" />
+							<input type="hidden" name="changePage" value="8" />
 							<button class="btn btn-info btn-block" type="submit" >
 								Trở Về
 							</button>
