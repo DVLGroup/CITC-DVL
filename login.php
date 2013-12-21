@@ -34,8 +34,9 @@
 	}
 
 	if(isset($_GET['logout'])){
-		sleep(2);
 		session_start();
+		$_SESSION['user'] = null;
+		$_SESSION['userID'] = null;
 		session_destroy();
 		echo "success";
 	}

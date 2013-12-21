@@ -2,7 +2,7 @@
 <?php 
  	
 	////Nếu là user thì gán $isUser = true
-	if (isset($_SESSION['user'])){	
+	if (array_key_exists('user', $_SESSION)){	
 	
 ?>
 <!-------------- Logined -------------->
@@ -13,7 +13,7 @@
     	<p><i class="glyphicon glyphicon-envelope"> </i> Hộp thư <i class="badge">5</i></p>
     	<p><i class="glyphicon glyphicon-pencil"> </i> Viết bài</p>
     	<p><a href="#account-setting" data-toggle="modal" data-target="#account-setting"><i class="glyphicon glyphicon-cog"> </i> Hồ sơ cá nhân</p></a>
-    	<p><a href="" onclick="logout()"><i class="glyphicon glyphicon-off"> </i> Đăng xuất</p></a>
+    	<p><a onclick="logout()"><i class="glyphicon glyphicon-off"> </i> Đăng xuất</p></a>
     </div>
   </div>
 </div>

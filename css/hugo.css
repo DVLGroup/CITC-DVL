@@ -40,11 +40,11 @@
 }
 
 .liveSearch > .form-liveSearch input[type="search"]{
-	width: 70%;
+	width: 74%;
 }
 
 .liveSearch > .form-liveSearch button{
-	width: 27%;
+	width: 20%;
 	margin-left: 3px;
 }
 

@@ -12,5 +12,5 @@
 	</nav> -->
 </div>
 <div class="world-map" style="height: 500px">
-
+	<img src="images/VNmaps.gif"/>
 </div>

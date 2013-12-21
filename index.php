@@ -36,6 +36,7 @@
         <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
         <script src="js/jquery.qtip.js" type="text/javascript"></script>
         <script src="js/login.js" type="text/javascript"></script>
+        <script src="js/liveSearch.js" type="text/javascript"></script>
         
         <!-- Start WOWSlider.com HEAD section -->
 			<link rel="stylesheet" type="text/css" href="engine1/style.css" />

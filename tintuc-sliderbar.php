@@ -1,3 +1,7 @@
+<!-------------- Search -------------->
+<?php
+	include 'tintuc-search.php';
+?>
 
 <!-------------- Login -------------->
 <?php
