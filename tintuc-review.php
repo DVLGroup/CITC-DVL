@@ -52,29 +52,11 @@
 				        			<li><a href="">Tự động chuyển trang – Auto Redirect cho website</a></li>
 				        		</ul>
 				        		</br>
-				        		<!------- Bình luận -------->
-				        		<h4>Bình luận:</h4>
-				        		<div class="">
-				        			
-				        		</div>
 				        		<div class="clearfix"></div>
 				        		</br>
 				        		<!------- Viết Bình luận -------->
 				        		<h4>Viết bình luận:</h4>
-				        		<div>
-				        			<div class="pull-left">
-					        			<img class="thumbnail" src="" alt="" data-src="holder.js/80x80" />
-					        			<p><a href=""><b class="text-warning">trongloikt192</b></a></p>
-				        			</div>
-				        			<textarea class="form-control pull-right" style="width: 630px; height: 100px"></textarea>
-				        			<div class="clearfix"></div>
-				        			<div >
-				        				<p style="margin-top: "><a href="" class="btn btn-xs btn-primary pull-right">Gửi bình luận</a></p>
-				        			</div>
-				        		</div>
+				        		<!--Facebook comment -->
+								<div class="fb-comments" data-href="http://localhost/PhimVL/index.php?filmPlay=1&filmBoID=3&ep=1" data-colorscheme="light" data-numposts="10" data-width="760px"></div>
 			        		</div>
-			        		
-			        		<div class="clearfix"></div>
-			        	</div>
-
-   </div>
+			        	

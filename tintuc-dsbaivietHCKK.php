@@ -49,6 +49,21 @@
 				echo '<div class="thumbnail">';
 				echo '<div>';
 				echo '<img src="img/bk_date.png" data-src="holder.js/70x35" style="position: relative; top:5px; left: -14px; width: 70px; height: 35px">';
+				//Facebook Share button -->
+				?>
+				<div class="pull-right" style="width: 300px">
+					<a href="#" 
+					  onclick="
+					    window.open(
+					      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://localhost/CITC-DVL/index.php?newsID=<?php echo $rs['tintuc_id']; ?>'), 
+					      'facebook-share-dialog', 
+					      'width=626,height=436'); 
+					    return false;">
+					    <img class="pull-right" src="images/share-buttons.png" title="Chia bài lên facebook" style="width: 100px; height: 30px"/>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+				<?php
 				echo '<p class="pull-right">10 <i class="glyphicon glyphicon-comment"></i></p>';
 				echo '</div>';
 				echo '<div class="" style="padding:0 20px">';
@@ -59,6 +74,7 @@
 				while ($row = mysql_fetch_assoc($result)) {
 					$user_name = $row['user_name'];
 				}
+				
 				$status = null;
 				if($rs['tintuc_status'] == "Đã Ủng Hộ"){
 					$status = '<i class="pull-right text-success">Đã được hỗ trợ</i>';
