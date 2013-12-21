@@ -75,6 +75,15 @@
 	        	<div class="container">
 		            <div class="row">
 		                <div class="col-lg-9">
+		                	<?php
+		                		if(isset($_GET['newsID'])){
+					        		include 'tintuc-review.php';
+		                		}else{
+		                	
+		                	?>
+		                	
+		                	
+		                	
 				            <!------------ Nav Tabs -------------->
 		                	<ul class="nav nav-pills" style="border: 1px solid #CCC">
 						    	<li class="active"><a href="#dsbaiHCKK" data-toggle="tab">Những hoàn cảnh khó khăn</a></li>
@@ -83,6 +92,7 @@
 						    	<li><a href="#dsDaugiasp" data-toggle="tab">Danh sách sản phẩm đấu giá</a></li>
 							</ul>    
 		                    <div class="tab-content">
+		                    	
 		                    	<!------------ DS bài viết vê những hoàn cảnh khó khăn -------------->
 		                    	<?php
 		                    		include 'tintuc-dsbaivietHCKK.php';
@@ -112,6 +122,9 @@
 					        	<?php
 					        		//include 'tintuc-accsetting.php';
 					        	?>
+					        	<?php
+					        	}
+								?>
 			        			</div>
 		           			</div><!--END PHAN NOI DUNG -->
 	        	

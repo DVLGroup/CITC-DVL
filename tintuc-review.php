@@ -1,20 +1,49 @@
 
-<!------------ Chi tiết bài viết -------------->
-			        	<div id="blogitem-content" class="tab-pane fade thumbnail">
-			        		<div>
-			        			<img src="img/bk_date.png" data-src="holder.js/70x35" style="position: relative; top:5px; left: -14px; width: 70px; height: 35px">
-			        			<p class="pull-right">10 <i class="glyphicon glyphicon-comment"></i></p>
-			        		</div>
-			        		<div class="" style="padding:0 20px">
-			        			<a href=""><h3>Leap Motion, Chromecast, Google Glass và sân chơi mới cho developer</h3></a>
-				        		<p>
-				        			<i class="glyphicon glyphicon-pencil"></i> Đăng trong danh mục <a href="">Technology</a> bởi admin
-				        			
-				        		</p>
-				        		<p><img class="text-center" src="" data-src="holder.js/600x300" /></p>
-				        		<p>Vừa mới nhận được con Leap Motion, có chút cảm hứng nên viết bài này, chia sẻ với các bạn một chút góc nhìn về công nghệ của tương lai và hướng đi mới của các lập trình viên.</p>
-				        		<p>Leap Motion là một trong 3 thiết bị đang được quan tâm trên cộng đồng công nghệ thế giới. Trong bài viết này, mình sẽ giới thiệu với các bạn về 3 thiết bị mà mình nghĩ có thể gây được sức hút cho cả người dùng và giới developer; đó là Leap Motion, Google Chromecast và Google Glass.</p>
-				        		</br>
+
+<?php
+	include 'Connect.php';
+	if(isset($_GET['newsID'])){
+		$tintuc_id = $_GET['newsID'];
+		$query = "SELECT * FROM tintuc WHERE tintuc_id = '$tintuc_id'";
+		$result = mysql_query($query);
+		while ($row = mysql_fetch_assoc($result)) {
+			$results[] = $row;
+		}
+		mysql_free_result($result);
+	}
+
+	if(isset($results)){
+		foreach ($results as $rs) {
+			    echo '<div id="tintuc-review" class="tab-pane fade in thumbnail">';
+			    echo '<div>';
+				echo '<img src="img/bk_date.png" data-src="holder.js/70x35" style="position: relative; top:5px; left: -14px; width: 70px; height: 35px">';
+				echo '<p class="pull-right">10 <i class="glyphicon glyphicon-comment"></i></p>';
+				echo '</div>';
+				echo '<div class="" style="padding:0 20px">';
+				echo '<a href=""><h3>'.$rs['tintuc_title'].'</h3></a>';
+				
+				$query = "SELECT user_name FROM user WHERE user_id = ".$rs['user_id']."";
+				$result = mysql_query($query);
+				$user_name = null;
+				while ($rw = mysql_fetch_array($result, MYSQL_ASSOC)) {
+					$user_name = $rw['user_name'];
+				}
+				$status = null;
+				if($rs['tintuc_status'] == "Đã Ủng Hộ"){
+					$status = '<i class="pull-right text-success">Đã được hỗ trợ</i>';
+				}else{
+					$status = '<i class="pull-right text-danger">Chưa được hỗ trợ</i>';
+				}
+				
+				echo '<p><i class="glyphicon glyphicon-pencil"></i> Bài viết bởi <a href="">'.$user_name.'</a>. Ngày đăng: '.$rs['tintuc_postdate'].' '.$status.'</p>';
+				echo '<p>'.bbcode_to_html($rs['tintuc_content']).'</p>';
+				echo '</div>';
+				echo '<div class="clearfix"></div>';
+				echo '<p></p>';
+			}
+		}
+?>
+				     	</br>
 				        		</br>
 				        		<h4>Các bài viết liên quan:</h4>
 				        		<ul class="list-unstyled">
@@ -26,21 +55,7 @@
 				        		<!------- Bình luận -------->
 				        		<h4>Bình luận:</h4>
 				        		<div class="">
-				        			<div >
-				        				<p><a href=""><b class="text-warning">trongloikt192</b></a>, Lúc 10:30 4/8/2013           -----------------------------</p>		
-				        			</div>
-				        			<div class="rows">
-				        				<img class="thumbnail col-lg-3" src="" alt="" data-src="holder.js/50x50" />
-				        				<p class="col-lg-10">Vừa mới nhận được con Leap Motion, có chút cảm hứng nên viết bài này, chia sẻ với các bạn một chút góc nhìn về công nghệ của tương lai và hướng đi mới của các lập trình viên.Vừa mới nhận được con Leap Motion, có chút cảm hứng nên viết bài này, chia sẻ với các bạn một chút góc nhìn về công nghệ của tương lai và hướng đi mới của các lập trình viên.</p>
-				        			</div>
 				        			
-				        			<div >
-				        				<p><a href=""><b class="text-warning">trongloikt192</b></a>, Lúc 10:30 4/8/2013           -----------------------------</p>		
-				        			</div>
-				        			<div class="rows">
-				        				<img class="thumbnail col-lg-3" src="" alt="" data-src="holder.js/50x50" />
-				        				<p class="col-lg-10">Vừa mới nhận được con Leap Motion, có chút cảm hứng nên viết bài này, chia sẻ với các bạn một chút góc nhìn về công nghệ của tương lai và hướng đi mới của các lập trình viên.Vừa mới nhận được con Leap Motion, có chút cảm hứng nên viết bài này, chia sẻ với các bạn một chút góc nhìn về công nghệ của tương lai và hướng đi mới của các lập trình viên.</p>
-				        			</div>
 				        		</div>
 				        		<div class="clearfix"></div>
 				        		</br>
@@ -61,3 +76,5 @@
 			        		
 			        		<div class="clearfix"></div>
 			        	</div>
+
+   </div>

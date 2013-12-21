@@ -67,7 +67,7 @@
 				}
 				
 				echo '<p><i class="glyphicon glyphicon-pencil"></i> Bài viết bởi <a href="">'.$user_name.'</a>. Ngày đăng: '.$rs['tintuc_postdate'].' '.$status.'</p>';
-				echo '<p>'.$rs['tintuc_content'].'</p>';
+				echo '<p>'.bbcode_to_html($rs['tintuc_content']).'</p>';
 				echo '<a href="index.php?newsID='.$rs['tintuc_id'].'" class="btn btn-sm btn-primary pull-right">Đọc tiếp...</a>';
 				echo '</div>';
 				echo '<div class="clearfix"></div>';

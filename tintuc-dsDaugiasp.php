@@ -33,7 +33,7 @@
 			<img data-src="holder.js/200x200"/>
 			<div class="info">
 				<b class="text-danger" >Tên sản phẩm</b>
-				<p><i class="text-danger">Còn 2 ngày 2h:30:33</i></p>
+				<p><i class="text-danger">Còn <?php  ?></i></p>
 			</div>
 			<p style="margin-top: 10px;">Đã đặt: 12000 VNĐ</p>
 			<p align="center"><button class="btn btn-xs btn-danger">Sửa</button></p>

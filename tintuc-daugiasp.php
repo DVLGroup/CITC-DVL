@@ -1,5 +1,6 @@
 
 <?php 
+	include 'Connect.php';
 	////Nếu là user thì gán $isUser = true
 	if (isset($_SESSION['user'])){	
 	
