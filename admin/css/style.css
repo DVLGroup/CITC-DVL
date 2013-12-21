@@ -13,7 +13,7 @@
 } 
 
 .container {
-	max-width: 980px;
+	max-width: 1080px;
 }
 
 #bttop{
@@ -22,4 +22,24 @@
     right:5px;
     display: none;
     z-index:1000;
+}
+
+.rq, .error {
+	color: red;
+}
+#bttop{
+	position:fixed;
+    bottom:60px;
+    right:10px;
+    display: none;
+}
+.table-scrollable  {
+    width: 100%;
+    overflow: auto;
+    /*overflow-y: hidden;*/
+    /*border: 1px solid #dddddd;*/
+ }
+progress{
+    border-radius: 10px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
 }

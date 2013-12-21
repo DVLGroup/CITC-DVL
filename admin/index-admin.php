@@ -2,9 +2,9 @@
 <html lang="en">
 	<head>
 		<?php
-			require 'Connect.php';
+		require 'Connect.php';
 		?>
-		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
@@ -37,6 +37,21 @@
 		<script src="js/bootstrap.js" type="text/javascript"></script>
 		<script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
 		<script src="js/jquery.qtip.js" type="text/javascript"></script>
+		<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+		<script src="js/messages_vi.js" type="text/javascript"></script>
+		<script>
+			$(document).ready(function() {
+				$("#management").validate({
+					errorElement : "span", // Định dạng cho thẻ HTML hiện thông báo lỗi
+					rules : {
+						rePassword : {
+							equalTo : "#password" // So sánh trường repassword với trường có id là password
+						},
+					}
+				});
+
+			});
+		</script>
 		<?php
 		session_start();
 		if (isset($_REQUEST["logOut"])) {
@@ -85,6 +100,9 @@
 						<li <?php echoActiveClassIfRequestMatches("index-admin.php?changePage=3") ?>>
 							<a href="index-admin.php?changePage=3">Tin Tức</a>
 						</li>
+						<li <?php echoActiveClassIfRequestMatches("index-admin.php?changePage=4") ?>>
+							<a href="index-admin.php?changePage=4">Thể Loại</a>
+						</li>
 
 						<li class="dropdown">
 							<a href="#" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> <?php
@@ -107,28 +125,39 @@
 			</div>
 		</header>
 		<div class="container bs-docs-container">
-			<div class="tab-content">
-				<?php
-				if(isset($_GET['changePage']))
-				{
+			<div class="row">
+				<div class="col-md-12">
+					<?php
+					if(isset($_GET['changePage']))
+					{
 					if($_GET['changePage']=='1')
 					{
-						require 'include/userForm.php';
+					require 'include/userForm.php';
 					}
 					else if($_GET['changePage']=='2')
 					{
-						require 'include/userLevelForm.php';
+					require 'include/userLevelForm.php';
 					}
 					else if($_GET['changePage']=='3')
 					{
-						require 'include/countryForm.php';
+					require 'include/tintucForm.php';
 					}
-				}
-				else {
-				?>
-				<h1 class="text-center text-info">Chào Mừng Đến Với Trang Quản Trị</h1>
-				<?php
-				} ?>
+					else if($_GET['changePage']=='4')
+					{
+					require 'include/tintucCatalogeForm.php';
+					}
+					else if($_GET['changePage']=='5')
+					{
+					require 'addEditDelete/addOneUser.php';
+					}
+					}
+					else {
+					?>
+					<h1 class="text-center text-info">Chào Mừng Đến Với Trang Quản Trị</h1>
+					<?php
+					}
+					?>
+				</div>
 			</div>
 		</div>
 		<footer class="navbar navbar-inverse navbar-fixed-bottom bs-docs-nav">
@@ -142,6 +171,6 @@
 
 			</div>
 		</footer>
-		
+
 	</body>
 </html>
