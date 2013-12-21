@@ -2,7 +2,7 @@
 					<?php
 					$queryC = 'select * from tintuc_cataloge order by tintuc_cataloge_id asc';
 					$resultC = mysql_query($queryC);
-					$queryUser = 'select user_id,user_name from user order by user_id asc';
+					$queryUser = 'select user_id,user_name from user where user_id != 2  order by user_id asc';
 					$resultU = mysql_query($queryUser);
 					?>
 					<div>
