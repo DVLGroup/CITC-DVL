@@ -153,7 +153,6 @@
 				</div><!--END PHAN CONTAINER-->
 			</div><!--END PHAN CONTENT-->
 		</div>
-		
 		<footer>
 			<?php
 				include 'tintuc-footer.php';

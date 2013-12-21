@@ -1,3 +1,14 @@
+
+<?php
+	include 'Connect.php';
+	
+	$query = "SELECT * FROM user WHERE user_id = ".$_SESSION['userID']." ";
+	$result = mysql_query($query);
+	$row = mysql_fetch_array($result, MYSQL_ASSOC);
+	
+?>
+
+
 <div  class="modal fade" id="account-setting" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -17,16 +28,15 @@
 								</div>
 
 								<div class="col-lg-4 pull-left">
-									Tài khoản: <b>trongloikt192</b></br>
-									Cấp độ: Gà con </br>
-									Vào: Thứ 6, 30/8/2013 19:01 </br>
-									Bằng Ip: 127.0.0.1 </br>
+									Tài khoản: <b><?php echo $row['user_name']; ?></b></br>
+									Số lần quyên góp: 9 </br>
+									Tổng số tiền quyên góp: 100.000.000 VND </br>
 								</div>
 							</div></td>
 						</tr>
 						<tr>
 							<th class="col-lg-3"> Họ tên/Tên công ty </th>
-							<td class="col-lg-9"> Lê Trọng Lợi </td>
+							<td class="col-lg-9"> <?php echo $row['user_name']; ?> </td>
 						</tr>
 						<tr>
 							<th> Ngày tháng năm sinh </th>
@@ -34,11 +44,11 @@
 						</tr>
 						<tr>
 							<th> Địa chỉ </th>
-							<td> Tp. HCM </td>
+							<td> <?php echo $row['user_address']; ?></td>
 						</tr>
 						<tr>
 							<th> Số điện thoại </th>
-							<td> 01225581369 </td>
+							<td> <?php echo $row['user_sdt']; ?> </td>
 						</tr>
 						<tr>
 							<th> Facebook </th>
@@ -46,7 +56,7 @@
 						</tr>
 						<tr>
 							<th> Email </th>
-							<td> trongloikt192@gmail.com </td>
+							<td> <?php echo $row['user_email']; ?> </td>
 						</tr>
 						<tr>
 							<th> Lần truy cập trước </th>
@@ -56,9 +66,7 @@
 					
 					<div class="user-description">
 						<h4>Giới thiệu về bản thân/Tổ chức:</h4>
-						ajsldjklasjdjalksdj
-						asdkklasjdkljaslkjd
-						asjdkjkasjdkjksajdj
+						<?php echo bbcode_to_html($row['user_description']); ?>
 						
 					</div>
 				</div>

@@ -21,7 +21,6 @@ window.fbAsyncInit = function() {
   }(document));
 
 function logout(){
-	alert('lo');
 	var data_exitlogin = "logout=true";
 	$.ajax({
 		type: "GET",

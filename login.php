@@ -7,11 +7,10 @@
 		//Lấy uemail, upass và biến đếm kết quả
 		$uemail = $_POST['uemail'];
 		$upass = $_POST['upass'];
-		$hash_pass = sha1($upass);
 		$dem = 0;
 		$userID = '';
 		//Tạo câu lệnh query
-		$query_login = "SELECT * FROM user WHERE user_email ='$uemail' AND user_password = '$hash_pass'";
+		$query_login = "SELECT * FROM user WHERE user_email ='$uemail' AND user_password = '$upass'";
 		//Thực hiện câu lệnh 
 		$rs = mysql_query($query_login, $my_connect);
 		//Lấy kết quả sau khi thực hiện
@@ -35,7 +34,7 @@
 	}
 
 	if(isset($_GET['logout'])){
-		sleep(1);
+		sleep(2);
 		session_start();
 		session_destroy();
 		echo "success";
