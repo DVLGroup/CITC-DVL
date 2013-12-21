@@ -150,6 +150,10 @@
 					{
 					require 'addEditDelete/addOneUser.php';
 					}
+					else if($_GET['changePage']=='6')
+					{
+					require 'addEditDelete/addOneUserLevel.php';
+					}
 					}
 					else {
 					?>
