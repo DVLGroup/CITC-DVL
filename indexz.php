@@ -27,6 +27,7 @@
 		<link href="css/footer.css" type="text/css" rel="stylesheet" media="print,screen" />
 		<link href="css/style.css" type="text/css" rel="stylesheet" media="print,screen" />
 		<link href="css/hugo.css" type="text/css" rel="stylesheet" media="print,screen" />
+		<link href="css/dsDaugia.css" type="text/css" rel="stylesheet" media="print,screen" />
 		
 		<!-- Javascript -->
 		<script src="js/jquery.min.js" type="text/javascript"></script>
@@ -34,6 +35,7 @@
         <script src="js/holder.js" type="text/javascript"></script>
         <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
         <script src="js/jquery.qtip.js" type="text/javascript"></script>
+        <script src="js/login.js" type="text/javascript"></script>
         
         <!-- Start WOWSlider.com HEAD section -->
 			<link rel="stylesheet" type="text/css" href="engine1/style.css" />
@@ -43,9 +45,11 @@
 		
 	</head>
 
-	<body>
+	<body  onload="time()">
 		<div id="head">
 			<?php
+				session_start();
+				include 'Controller.php';
 				include 'tintuc-head.php';
 			?>
 		</div>
@@ -76,7 +80,7 @@
 						    	<li class="active"><a href="#dsbaiHCKK" data-toggle="tab">Những hoàn cảnh khó khăn</a></li>
 						    	<li><a href="#dsbaiUser" data-toggle="tab">Tâm sự bạn đọc</a></li>
 						    	<li><a href="#dsTCTT" data-toggle="tab">Tổ chức từ thiện</a></li>
-						    	<li><a href="#dsTaiTro" data-toggle="tab">Danh sách nhà tài trợ</a></li>
+						    	<li><a href="#dsDaugiasp" data-toggle="tab">Danh sách sản phẩm đấu giá</a></li>
 							</ul>    
 		                    <div class="tab-content">
 		                    	<!------------ DS bài viết vê những hoàn cảnh khó khăn -------------->
@@ -98,6 +102,11 @@
 			        			<?php
 		                    		include 'tintuc-dsNhaTT.php';
 		                    	?>
+			        			
+			        			<!------------ DS Đấu giá -------------->
+					        	<?php
+					        		include 'tintuc-dsDaugiasp.php';
+					        	?>
 			        			
 			        			<!------------ Trang cá nhân -------------->
 					        	<?php

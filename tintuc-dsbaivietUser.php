@@ -1,7 +1,6 @@
-
 <?php
-	include 'Connect.php';
-	//////// NhungHoanCanhKhoKhan Item ////////////
+    include 'Connect.php';
+	//////// Tâm sự của bạn đọc Item ////////////
 			
 			
 			//****
@@ -21,7 +20,7 @@
 			$self = $_SERVER['PHP_SELF'] . '?';	
 			
 			//Query select *****
-			$query = "SELECT * FROM tintuc WHERE tintuc_cataloge_id = 1 LIMIT $limit ";
+			$query = "SELECT * FROM tintuc WHERE tintuc_cataloge_id = 2 LIMIT $limit ";
 			$result = mysql_query($query);
 			
 			
@@ -32,20 +31,18 @@
 			
 			//Luu ket qua vao mang co dinh va giai phong result
 			while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-				$resultsHCKK[] = $row;
+				$resultsbvU[] = $row;
 			}
 			mysql_free_result($result);
-			
 ?>
 
 
 
-
-<!------------ ViNguoiNgheo Item -------------->
-<div id="dsbaiHCKK" class="tab-pane fade in active">
+<!------------ DS bài viết tâm sự những hoàn cảnh khó khăn do người dùng viết ------->
+<div id="dsbaiUser" class="tab-pane fade">
 	<?php
-		if(isset($resultsHCKK)){
-			foreach (array_slice($resultsHCKK, $start, $limit_per_page) as $rs) {
+		if(isset($resultsbvU)){
+			foreach (array_slice($resultsbvU, $start, $limit_per_page) as $rs) {
 				echo '<div class="thumbnail">';
 				echo '<div>';
 				echo '<img src="img/bk_date.png" data-src="holder.js/70x35" style="position: relative; top:5px; left: -14px; width: 70px; height: 35px">';
@@ -54,10 +51,11 @@
 				echo '<div class="" style="padding:0 20px">';
 				echo '<a href=""><h3>'.$rs['tintuc_title'].'</h3></a>';
 				
-				$query = "SELECT user_name FROM user WHERE user_id = '".$rs['user_id']."'";
+				$query = "SELECT user_name FROM user WHERE user_id = ".$rs['user_id']."";
 				$result = mysql_query($query);
-				while ($row = mysql_fetch_assoc($result)) {
-					$user_name = $row['user_name'];
+				$user_name = null;
+				while ($rw = mysql_fetch_array($result, MYSQL_ASSOC)) {
+					$user_name = $rw['user_name'];
 				}
 				$status = null;
 				if($rs['tintuc_status'] == "Đã Ủng Hộ"){
