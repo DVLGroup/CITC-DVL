@@ -10,7 +10,7 @@ if (!isset($_REQUEST['tintucID'])||!isset($_REQUEST['tieuDe']) || !isset($_REQUE
 	echo($_REQUEST['keyword']);
 	echo($_REQUEST['TrangThai']);
 	echo($_REQUEST['theLoai']);
-	//header('Location: ../index-admin.php');
+	header('Location: ../index-admin.php');
 } else {
 	
 	$queryEditUser = "update tintuc set tintuc_title = '" . $_REQUEST['tieuDe'] . "',tintuc_content = '" . $_REQUEST['noiDung'] . "',

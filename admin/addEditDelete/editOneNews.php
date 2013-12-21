@@ -2,6 +2,10 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 		<title>Poor People's Magazine (DVL-PPM)</title>
@@ -46,7 +50,6 @@
 					}
 				});
 				$("#editor").wysibb();
-
 			});
 		</script>
 		<?php
@@ -61,7 +64,7 @@
 		$resultSelectUser = mysql_query($querySelectTinTuc);
 		$queryC = 'select * from tintuc_cataloge order by tintuc_cataloge_id asc';
 		$resultC = mysql_query($queryC);
-		$queryUser = 'select user_id,user_name from user order by user_id asc';
+		$queryUser = 'select user_id,user_name from user where user_id != 2 order by user_id asc';
 		$resultU = mysql_query($queryUser);
 		
 		while ($row = mysql_fetch_array($resultSelectUser)) {
@@ -74,6 +77,7 @@
 			$theLoai = $row['7'];
 			
 		}
+		mysql_close($my_connect);
 		// echo($emailEdit . $passwordEdit.$userLevelEdit);
 	?>
 	</head>
