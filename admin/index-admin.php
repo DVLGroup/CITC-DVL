@@ -41,7 +41,16 @@
 		<script src="js/jquery.validate.min.js" type="text/javascript"></script>
 		<script src="js/messages_vi.js" type="text/javascript"></script>
 		<script src="js/wysibb/jquery.wysibb.js" type="text/javascript"></script>
+		<script src="js/jquery.quicksearch.js" type="text/javascript"></script>
 		<script>
+			$(document).ready(function() {
+				$("#id_search").quicksearch("table tbody tr", {
+					noResults : '#noresults',
+					stripeRows : ['odd', 'even'],
+					loader : 'span.loading',
+					minValLength : 2
+				});
+			});
 			$(document).ready(function() {
 				$("#management").validate({
 					errorElement : "span", // Định dạng cho thẻ HTML hiện thông báo lỗi

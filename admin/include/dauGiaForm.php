@@ -14,9 +14,9 @@
 				<div class="btn-group">
 					<input placeholder="Tìm Kiếm..." type="search" name="search" class="form-control" value="" id="id_search" />
 				</div>
-				<!-- <div class="btn-group">
+				<div class="btn-group">
 				<span class="loading text-primary">Loading...</span>
-				</div> -->
+				</div>
 				<hr id="Eight" />
 				<div id="tableEight" class="table-responsive">
 					<table class="table table-striped table-hover">
