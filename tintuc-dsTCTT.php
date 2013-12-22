@@ -66,7 +66,7 @@
 				echo '<div class="" style="padding:0 20px">';
 				echo '<a href="index.php?chitietUserID='.$rs['user_id'].'"><h3>'.$rs['user_name'].'</h3></a>';
 				echo '<p>'.$rs['user_address'].'</p>';
-				echo '<p><img src="'.$rs['user_avatar'].'" /></p>';
+				echo '<p><img width="300" height="200" src="admin/upload/'.$rs['user_avatar'].'" /></p>';
 				echo '<p>'.$rs['user_description'].'</p>';
 				echo '<a href="index.php?chitietUserID='.$rs['user_id'].'" class="btn btn-sm btn-primary pull-right">Đọc tiếp...</a>';
 				echo '</div>';
