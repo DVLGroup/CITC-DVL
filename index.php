@@ -75,7 +75,7 @@
 		<p></p>
 		<div class="body container">
 			<!------------ Slider ------------->
-			<div class="slider" style="height: 550px; padding: 20px; border: 1px solid #CCC">
+			<div class="slider" style="height: 550px; padding: 20px; ">
 				<?php
 					include 'tintuc-slider.php';
 				?>

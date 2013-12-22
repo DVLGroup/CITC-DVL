@@ -62,13 +62,13 @@
 				<h4>Các bài viết liên quan:</h4>
 				<ul class="list-unstyled">
 					<li>
-						<a href="">Firefox Addon cho phát triển web</a>
+						<a href="">Những hoàn cảnh cơ cực</a>
 					</li>
 					<li>
-						<a href="">Tôi nghĩ việc ở Vinagame</a>
+						<a href="">Gánh nặng trên đôi vai non</a>
 					</li>
 					<li>
-						<a href="">Tự động chuyển trang – Auto Redirect cho website</a>
+						<a href="">Vì một hành tinh tươi đẹp</a>
 					</li>
 				</ul>
 				</br>

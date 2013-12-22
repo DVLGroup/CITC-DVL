@@ -11,6 +11,6 @@
 	</div>
 	</nav> -->
 </div>
-<div class="world-map" style="height: 500px">
-	<img src="images/VNmaps.gif"/>
+<div class="world-map" style=" width: 1000px; margin: 0 auto;">
+	<img width="960" height="500" src="images/mapa_swiata.png"/>
 </div>

@@ -2,7 +2,7 @@
 			<div class="form-liveSearch">
 				<form action="" method="" role="form">
 					<div class="form-group">
-						<input id="search" class="form-textbox pull-left" type="search" autocomplete="off" name="txt-search"/>
+						<input id="search" class="form-textbox pull-left" type="search" autocomplete="off" name="txt-search" placeholder="Tìm kiếm"/>
 						<button class="btn btn-danger pull-left" type="submit" ><i class="glyphicon glyphicon-search"></i> </button>
 						<div class="clearfix"></div>
 					</div>

@@ -21,7 +21,7 @@
 			$self = $_SERVER['PHP_SELF'] . '?';	
 			
 			//Query select *****
-			$query = "SELECT * FROM tintuc WHERE tintuc_cataloge_id = 1 LIMIT $limit ";
+			$query = "SELECT * FROM tintuc WHERE tintuc_cataloge_id = 2 LIMIT $limit ";
 			$result = mysql_query($query);
 			
 			
@@ -67,7 +67,7 @@
 				echo '<p class="pull-right">10 <i class="glyphicon glyphicon-comment"></i></p>';
 				echo '</div>';
 				echo '<div class="" style="padding:0 20px">';
-				echo '<a href=""><h3>'.$rs['tintuc_title'].'</h3></a>';
+				echo '<a href="index.php?newsID='.$rs['tintuc_id'].'"><h3>'.$rs['tintuc_title'].'</h3></a>';
 				
 				$query = "SELECT user_name FROM user WHERE user_id = '".$rs['user_id']."'";
 				$result = mysql_query($query);

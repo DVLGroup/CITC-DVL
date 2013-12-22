@@ -1,7 +1,7 @@
 
 <?php
 	include 'Connect.php';
-	if(isset($_SESSION['usser'])){
+	if(isset($_SESSION['user'])){
 		$query = "SELECT * FROM user WHERE user_id = ".$_SESSION['userID']." ";
 		$result = mysql_query($query);
 		$row = mysql_fetch_array($result, MYSQL_ASSOC);

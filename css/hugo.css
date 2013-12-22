@@ -49,10 +49,12 @@
 }
 
 .result-liveSearch{
+	position: absolute;
 	display: none;
-	width: 70%;
+	width: 74%;
 	border: 1px solid #CCC;
 	padding: 5px;
+	background-color: #FFFFFF
 }
 
 .result-liveSearch-heading{
