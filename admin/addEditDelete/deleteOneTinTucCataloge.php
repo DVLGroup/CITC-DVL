@@ -34,91 +34,34 @@
 		<script src="../js/bootstrap.js" type="text/javascript"></script>
 		<script src="../js/jquery.dataTables.min.js" type="text/javascript"></script>
 		<script src="../js/jquery.qtip.js" type="text/javascript"></script>
-		
+		<?php
+			if (!isset($_REQUEST['tintucCatalogeID'])||!isset($_REQUEST['tintucCatalogeName'])) {
+				header('Location: ../index-admin.php');
+			}
+		?>
 	</head>
 	<body>
-		<?php
-		
-		require '../Connect.php';
-		$spName = $_POST['spName'];
-		
-		$thoiGian = $_POST['thoiGian'];
-		$giaGoc = $_POST['giaGoc'];
-		$avatar = $_POST['avatar'];
-
-		if ($spName != null ||$thoiGian != null||$giaGoc != null||$avatar != null) {
-			$sql = "INSERT INTO `sanpham`(`sp_name`, `sp_status`, `sp_time`, `sp_price_goc`, `sp_image`)
-			 VALUES ('$spName','1','$thoiGian','$giaGoc','$avatar')";
-			// echo($sql);
-			if (mysql_query($sql)) {
-				// header('"Location: http://theos.in/"localhost/phptest/admin/index-admin.php?changePage=1');
-				$sqlSelect = "select * from sanpham order by sp_id desc limit 1";
-				$resultSelect = mysql_query($sqlSelect);
-				while($row = mysql_fetch_array($resultSelect))
-				{
-					$sp_id = $row['0'];
-				}
-				$sqlTuDong = "CREATE EVENT TimeOut_$sp_id
-								ON SCHEDULE AT '$thoiGian'
-								DO
-								UPDATE sanpham SET sp_status = 0, sp_time =0 WHERE sp_id = $sp_id;";
-				$resultTuDong = mysql_query($sqlTuDong);
-		?>
 		<div class="container">
 			<form method="GET" class="form-horizontal" action="../index-admin.php">
 				<div class="form-group">
 					<div class="row well">
 						<div class="col-md-8 col-md-offset-2">
-							<div class="alert alert-success">
+							<div class="alert alert-warning">
 								<p class="text-center">
-									Thêm Thành Công!
+									<strong>Cảnh Báo! </strong>Bạn Có Chắc Muốn Xóa Thể Loại: <strong><?php echo($_REQUEST['tintucCatalogeName']);?></strong> Không?
 								</p>
 							</div>
 						</div>
 						<div class="col-md-2 col-md-offset-5">
 							<input type="hidden" name="changePage" value="8" />
+							<a href="../addEditDelete/deleteTinTucCataloge.php?tintucCatalogeTranID=<?php echo($_REQUEST['tintucCatalogeID']); ?>" class="btn btn-default btn-block">Có</a>
 							<button class="btn btn-info btn-block" type="submit" >
-								Trở Về
+								Không
 							</button>
 						</div>
 
 					</div>
 				</div>
 			</form
-
-		</div>
-		<?php
-			mysql_close($my_connect);
-		} else {
-		?>
-		<div class="container">
-			<form method="GET" action="../index-admin.php" class="form-horizontal">
-				<div class="form-group">
-					<div class="row well">
-						<div class="col-md-8 col-md-offset-2">
-							<div class="alert alert-danger">
-								<p class="text-center">
-									Thêm Không Thành Công!
-								</p>
-							</div>
-						</div>
-						<div class="col-md-2 col-md-offset-5">
-							<input type="hidden" name="changePage" value="8" />
-							<button class="btn btn-info btn-block" type="submit" >
-								Trở Về
-							</button>
-						</div>
-					</div>
-				</div>
-			</form>
-
-		</div>
-		<?php
-			mysql_close($my_connect);
-			}
-		}
-		else
-			// header('Location: ../index-admin.php');
-		?>
 	</body>
 </html>

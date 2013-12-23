@@ -182,6 +182,10 @@
 					{
 					require 'addEditDelete/addOneSP.php';
 					}
+					else if($_GET['changePage']=='12')
+					{
+					require 'addEditDelete/addOneTinTucCataloge.php';
+					}
 					}
 					else {
 					?>

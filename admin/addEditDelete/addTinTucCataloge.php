@@ -40,29 +40,14 @@
 		<?php
 		
 		require '../Connect.php';
-		$spName = $_POST['spName'];
-		
-		$thoiGian = $_POST['thoiGian'];
-		$giaGoc = $_POST['giaGoc'];
-		$avatar = $_POST['avatar'];
+		$tenCataloge = $_POST['theLoaiName'];
 
-		if ($spName != null ||$thoiGian != null||$giaGoc != null||$avatar != null) {
-			$sql = "INSERT INTO `sanpham`(`sp_name`, `sp_status`, `sp_time`, `sp_price_goc`, `sp_image`)
-			 VALUES ('$spName','1','$thoiGian','$giaGoc','$avatar')";
-			// echo($sql);
+		if ($tenCataloge != null) {
+			$sql = "INSERT INTO `tintuc_cataloge`(`tintuc_cataloge_name`)
+			 VALUES ('$tenCataloge')";
+
 			if (mysql_query($sql)) {
 				// header('"Location: http://theos.in/"localhost/phptest/admin/index-admin.php?changePage=1');
-				$sqlSelect = "select * from sanpham order by sp_id desc limit 1";
-				$resultSelect = mysql_query($sqlSelect);
-				while($row = mysql_fetch_array($resultSelect))
-				{
-					$sp_id = $row['0'];
-				}
-				$sqlTuDong = "CREATE EVENT TimeOut_$sp_id
-								ON SCHEDULE AT '$thoiGian'
-								DO
-								UPDATE sanpham SET sp_status = 0, sp_time =0 WHERE sp_id = $sp_id;";
-				$resultTuDong = mysql_query($sqlTuDong);
 		?>
 		<div class="container">
 			<form method="GET" class="form-horizontal" action="../index-admin.php">
@@ -76,7 +61,7 @@
 							</div>
 						</div>
 						<div class="col-md-2 col-md-offset-5">
-							<input type="hidden" name="changePage" value="8" />
+							<input type="hidden" name="changePage" value="4" />
 							<button class="btn btn-info btn-block" type="submit" >
 								Trở Về
 							</button>
@@ -103,7 +88,7 @@
 							</div>
 						</div>
 						<div class="col-md-2 col-md-offset-5">
-							<input type="hidden" name="changePage" value="8" />
+							<input type="hidden" name="changePage" value="4" />
 							<button class="btn btn-info btn-block" type="submit" >
 								Trở Về
 							</button>
@@ -118,7 +103,7 @@
 			}
 		}
 		else
-			// header('Location: ../index-admin.php');
+			header('Location: ../index-admin.php');
 		?>
 	</body>
 </html>
